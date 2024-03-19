@@ -11,10 +11,11 @@ export const showGames = async (req, res) => {
 
     res.json(games);
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching games ", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
 
 // ROUTE 2: get game details using GET '/games'
 export const gameInfo = async (req, res) => {
