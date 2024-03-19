@@ -1,18 +1,16 @@
-import express from 'express'
-import userRouter from './routes/userRoutes.js'
+import express from 'express';
+import userRouter from './routes/userRoutes.js';
+import gameRouter from './routes/gameRoutes.js';
 import connectToDatabase from './DB/db.js';
+import cors from 'cors';
 
 const app = express();
-app.use(express.json());
-
 const port = 5005;
-app.use(userRouter);
 
-// app.post('/adduser', (req, res) => {
-// let data = req.body;
-// User.create(data);
-// res.send({msg:'user added'})
-// })
+app.use(cors());
+app.use(express.json());
+app.use(userRouter);
+app.use(gameRouter);
 
 // Set up database connection
 connectToDatabase()
@@ -27,6 +25,6 @@ connectToDatabase()
     console.error('Error setting up database connection:', error);
   });
 
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
