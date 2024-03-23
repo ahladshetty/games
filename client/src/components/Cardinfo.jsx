@@ -1,10 +1,8 @@
 import React from 'react'
 
-const Cardinfo = (props) => {
+const Cardinfo = () => {
   return (
-    <div>
-        
-    </div>
+    <div>Cardinfo</div>
   )
 }
 

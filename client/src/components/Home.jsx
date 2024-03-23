@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import Search from './Search';
+import Navbar from './Navbar';
 
 const Home = () => {
   const [games, setGames] = useState([]);
@@ -32,6 +33,8 @@ const Home = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="container my-4">
       <h2>Games Catalogue</h2>
       <div className="row">
@@ -43,6 +46,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

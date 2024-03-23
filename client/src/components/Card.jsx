@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Pages from './Pages'; // Import the Pages component
 
 const Card = ({ games }) => {
-  if (!games || games.length === 0) {
-    return <div>No games found</div>;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [gamesPerPage] = useState(50); // Number of games to display per page
+
+  useEffect(() => {
+    setCurrentPage(1); // Reset to first page whenever games change
+  }, [games]);
+
+  // Get current games
+  const indexOfLastGame = currentPage * gamesPerPage;
+  const indexOfFirstGame = indexOfLastGame - gamesPerPage;
+  const currentGames = games.slice(indexOfFirstGame, indexOfLastGame);
+
+  // Change page
+  const paginate = (pageNumber) => { 
+    setCurrentPage(pageNumber); 
+    window.scrollTo(0, 0);
   }
 
   return (
     <div className="container">
-      {/* <h1>Games Catalogue</h1> */}
+      {/* Display games */}
       <div className="row">
-        {games.map((game) => (
+        {currentGames.map((game) => (
           <div key={game.id} className="col-md-4 mb-3">
             <div className="card">
               <img src={game.background_image} className="card-img-top" alt={game.name} />
@@ -22,6 +37,9 @@ const Card = ({ games }) => {
           </div>
         ))}
       </div>
+
+      {/* Render pagination component */}
+      <Pages currentPage={currentPage} totalPages={Math.ceil(games.length / gamesPerPage)} onPageChange={paginate} />
     </div>
   );
 };

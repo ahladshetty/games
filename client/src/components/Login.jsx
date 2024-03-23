@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./css/login.css";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ uname: "", password: "" });
-//   let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const Login = () => {
       // localStorage.setItem("user", json.data);
       localStorage.setItem("user", JSON.stringify(json.data));
     alert("welcome " + credentials.uname)
-    //   navigate("/cover");
+      navigate("/");
     } else {
       alert("Invalid credentials");
     }

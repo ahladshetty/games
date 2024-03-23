@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import Navbar from './Navbar';
 import './css/signup.css';
 
@@ -9,7 +9,7 @@ const Signup = () => {
     password: '',
   });
 
-//   let navigate = useNavigate("/");
+  let navigate = useNavigate("/");
 
   const handleSubmit = async (e) => {
     console.log("hola");
@@ -28,7 +28,7 @@ const Signup = () => {
         alert(json.error);
       } else {
         alert('User added successfully');
-        // navigate('/home'); //redirect to a different page after successful addition
+        navigate('/login'); //redirect to a different page after successful addition
       }
     } catch (error) {
       console.error(error.message);
