@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Pages from './Pages'; // Import the Pages component
-
+import { useNavigate } from 'react-router-dom';
 const Card = ({ games }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [gamesPerPage] = useState(50); // Number of games to display per page
@@ -19,6 +19,10 @@ const Card = ({ games }) => {
     setCurrentPage(pageNumber); 
     window.scrollTo(0, 0);
   }
+  let navigate = useNavigate();
+  const handleClick = (game) => {
+    navigate(`/cardinfo/${game.id}`)
+  }
 
   return (
     <div className="container">
@@ -26,7 +30,7 @@ const Card = ({ games }) => {
       <div className="row">
         {currentGames.map((game) => (
           <div key={game.id} className="col-md-4 mb-3">
-            <div className="card">
+            <div onClick={() => handleClick(game)} className="card">
               <img src={game.background_image} className="card-img-top" alt={game.name} />
               <div className="card-body">
                 <h5 className="card-title">{game.name}</h5>
