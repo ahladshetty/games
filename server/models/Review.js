@@ -8,7 +8,7 @@ const ReviewSchema = new mongoose.Schema({
     uname:{
         type:String,
     },
-    descripton:{
+    description:{
         type:String
     },
     rating:{

@@ -4,16 +4,16 @@ import User from "../models/User.js";
 export const addReview=async(req,res)=>{
   try {
       const {description, rating   }=req.body;
-      const{userId, uname} =req.user
+      const{userId, userName} =req.user
       const {gameId} = req.params
-  
-      if(!description|| !rating || !userId || !uname || !gameId){
+ 
+      if(!description|| !rating || !userId || !userName || !gameId){
           return res.status(400).json({
               msg:"matha values padle"
           })
       }
-  
-      const user= await User.findById({id})
+  console.log(description);
+      const user= await User.findById({_id:userId})
   
       if(!user){
           return res.status(400).json({
@@ -30,7 +30,7 @@ export const addReview=async(req,res)=>{
       await Review.create({
           gameId,
           userId,
-          uname,
+          uname:userName,
           description,
           rating
       })
@@ -40,6 +40,7 @@ export const addReview=async(req,res)=>{
         msg:"game created successfully "
       })
   } catch (error) {
+    console.log(error);
     res.status(500).json({
         msg:"Something went wrong"
     })
