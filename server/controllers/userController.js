@@ -21,9 +21,9 @@ export const addUser = async (req, res, next) => {
       password: secPass,
     };
 
-    await User.create(userData); // insert into user collection
+    const newUser=await User.create(userData); // insert into user collection
 
-    const authtoken = jwt.sign(userData, JWT_SECRET);
+    const authtoken = jwt.sign({userId:newUser._id,userName:newUser.uname}, JWT_SECRET);
     res.json({ userData, authtoken });
 
   } catch (error) {
@@ -51,13 +51,13 @@ export const loginUser = async (req, res, next) => {
 
     const data = { // create payload if credentials are correct
       user: {
-        uid: user.uid,
+        uid: user._id,
         uname: user.uname,
         role: user.role
       }
     };
 
-    const authtoken = jwt.sign(data, JWT_SECRET);
+    const authtoken = jwt.sign({userId:user._id,userName:user.uname}, JWT_SECRET);
     success = true;
     res.json({ data, success, authtoken }); // display details in response
 

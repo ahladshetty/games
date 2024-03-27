@@ -8,12 +8,15 @@
   
   .bg-signup {
     background-color: #f9f9f9; /* Light background color */
+    background-image: url('../../../public/frame8.png'); /* Add this line */
+    background-size: cover; /* Optional: Adjust background size */
+    background-position: center; /* Optional: Adjust background position */
   }
   
   .signup-container {
     width: 350px;
     padding: 40px;
-    background-color: #fff;
+    background-color: #0003;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -24,8 +27,8 @@
   
   .signup-form h2 {
     margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+    font-size: 27px;
+    color: #eed6ee;
   }
   
   .signup-form label {
@@ -38,16 +41,17 @@
   .signup-form input {
     width: 100%;
     padding: 12px;
+    background-color: #dfc7df;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 17px;
   }
   
   .signup-form button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff; /* Primary button color */
+    background-color: #67196a; /* Primary button color */
     color: #fff;
     border: none;
     border-radius: 6px;

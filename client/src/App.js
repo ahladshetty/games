@@ -7,8 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="card-info" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/back23.png)` }}>
-
+    <div className="card-info" >
+{/* style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/back23.png)` }} */}
 
       <BrowserRouter>
         <Routes>

@@ -3,7 +3,7 @@ import Pages from './Pages'; // Import the Pages component
 import { useNavigate } from 'react-router-dom';
 const Card = ({ games }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [gamesPerPage] = useState(50); // Number of games to display per page
+  const [gamesPerPage] = useState(30); // Number of games to display per page
 
   useEffect(() => {
     setCurrentPage(1); // Reset to first page whenever games change

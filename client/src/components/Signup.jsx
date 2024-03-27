@@ -41,7 +41,7 @@ const Signup = () => {
   };
 
   return (
-    <>
+    <div className='' style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/frame.png)` }}   >
     {/* <Navbar /> */}
       <div className="full-screen bg-signup">
         <div className="signup-container">
@@ -74,7 +74,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
