@@ -2,6 +2,7 @@ import express from 'express';
 import userRouter from './routes/userRoutes.js';
 import gameRouter from './routes/gameRoutes.js';
 import reviewRouter from './routes/reviewRoutes.js'
+import listRouter from './routes/listRoutes.js'
 import connectToDatabase from './DB/db.js';
 import cors from 'cors';
 
@@ -12,7 +13,8 @@ app.use(cors());
 app.use(express.json());
 app.use(userRouter);
 app.use(gameRouter);
-app.use(reviewRouter)
+app.use(reviewRouter);
+app.use(listRouter);
 
 // Set up database connection
 connectToDatabase()

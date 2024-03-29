@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-// Define the schema for the game collection
 const gameSchema = new mongoose.Schema({
   id: {
     type: Number,
@@ -12,10 +11,10 @@ const gameSchema = new mongoose.Schema({
   },
   playtime: {
     type: Number,
-    default: 0 // Provide a default value if necessary
+    default: 0 
   },
   platforms: {
-    type: [String], // Array of strings
+    type: [String],
     // required: true
   },
   released: {
@@ -28,28 +27,26 @@ const gameSchema = new mongoose.Schema({
   },
   rating: {
     type: Number,
-    default: 0 // Provide a default value if necessary
+    default: 0
   },
   metacritic: {
     type: Number,
-    default: 0 // Provide a default value if necessary
+    default: 0
   },
   short_screenshots: {
-    type: [String], // Array of strings (URLs)
+    type: [String],
     // required: true
   },
   genres: {
-    type: [String], // Array of strings
+    type: [String],
     // required: true
   },
   developers: {
-    type: [String], // Array of strings
+    type: [String],
     // required: true
   }
 });
 
-// Create a model based on the schema
 const Game = mongoose.model('Game', gameSchema);
 
-// Export the model to be used in other parts of the application
 export default Game;

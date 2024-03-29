@@ -1,6 +1,7 @@
 import Review from "../models/Review.js";
 import User from "../models/User.js";
 
+// ROUTE 1: add reviews using POST '/addReview/:gameId'
 export const addReview=async(req,res)=>{
   try {
       const {description, rating   }=req.body;
@@ -46,3 +47,38 @@ export const addReview=async(req,res)=>{
     })
   }
 }
+
+// ROUTE 2: delete reviews using DELETE '/deleteReview/:reviewId'
+// import Review from "../models/Review.js";
+// import User from "../models/User.js";
+
+// export const deleteReview = async (req, res) => {
+//   try {
+//     const { reviewId } = req.params;
+//     const { userId } = req.user;
+
+//     if (!reviewId || !userId) {
+//       return res.status(400).json({ msg: "Missing required parameters" });
+//     }
+
+//     // Check if the review exists
+//     const review = await Review.findById(reviewId);
+
+//     if (!review) {
+//       return res.status(404).json({ msg: "Review not found" });
+//     }
+
+//     // Check if the user is authorized to delete the review
+//     if (review.userId.toString() !== userId) {
+//       return res.status(403).json({ msg: "Unauthorized to delete this review" });
+//     }
+
+//     // Delete the review
+//     await review.remove();
+
+//     res.status(200).json({ msg: "Review deleted successfully" });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ msg: "Something went wrong" });
+//   }
+// };
