@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Card from './Card';
 import Search from './Search';
 import Navbar from './Navbar';
@@ -18,11 +18,7 @@ const Home = () => {
     genres: []
   });
 
-  useEffect(() => {
-    fetchGames();
-  }, []); // Added empty dependency array
-
-  const fetchGames = async () => {
+  const fetchGames = useCallback(async () => {
     try {
       const response = await fetch('http://localhost:5005/games');
       if (!response.ok) {
@@ -35,7 +31,7 @@ const Home = () => {
     } catch (error) {
       console.error('Error fetching games:', error);
     }
-  };
+  }, []);
 
   const updateFilterOptions = (data) => {
     const platforms = [...new Set(data.flatMap(game => game.platforms))];
@@ -79,6 +75,10 @@ const Home = () => {
 
     setFilteredGames(filtered);
   };
+
+  useEffect(() => {
+    fetchGames();
+  }, [fetchGames]); 
 
   return (
     <>
