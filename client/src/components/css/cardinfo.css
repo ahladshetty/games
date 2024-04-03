@@ -1,23 +1,38 @@
 .cardinfo-container {
     padding: 20px;
   }
-  
   .game-details {
     max-width: 800px;
     margin: 0 auto;
   }
   
   .game-details h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-family: newFont;
+    letter-spacing: 2px;
+    color: #ffffff;
+    font-size: 100px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background-image: url('C:\Users\ragch\Documents\mini\games\client\public\Asset 2.png'); /* Set the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center; /* Center the background image */
+    background-size: 1000px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px; 
   }
   
   .game-details p {
+    font-family: newFont1;
+    letter-spacing: 2px;
+    color: #ffffff;
     font-size: 20px;
     margin-bottom: 15px; /* Increased margin between paragraphs */
   }
   
   .game-details img {
+    border: 10px solid #ffffff;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
     display: block;
     max-width: 100%;
     height: auto;

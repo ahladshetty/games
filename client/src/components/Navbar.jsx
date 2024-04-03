@@ -15,10 +15,10 @@ const Navbar = () => {
     navigate('/login')
   }
   return (
-      <nav className="navbar navbar-expand-lg" style={{backgroundColor: 'rgb(217, 217, 217)'}}>
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/about">
-            Cooldown
+            COOLDOWN
           </Link>
           <button
             className="navbar-toggler"
@@ -35,16 +35,16 @@ const Navbar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
              
               <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} to="/">Explore</Link>              </li>
+              <Link className={`nav-link ${location.pathname === "/lists" ? "active" : ""}`} to="/">EXPLORE</Link>              </li>
               
               <li className="nav-item">
-                <Link className={`nav-link ${location.pathname === "/lists" ? "active" : ""}`} to="/lists">Lists</Link>
+                <Link className={`nav-link ${location.pathname === "/lists" ? "active" : ""}`} to="/lists">LISTS</Link>
               </li>
             </ul>
             {user?.user?.role==="staff" && <Link className={`mx-2 nav-link ${location.pathname === "/editmenu" ? "active" : ""}`} to="/editmenu" >EditMenu</Link>}
             {user?.user?.role==="staff" && <Link className={`mx-2 nav-link ${location.pathname === "/signup" ? "active" : ""}`} to="/signup" >Signup</Link>}
-            <Link className={`mx-2 nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">About</Link>
-            <button className={`mx-1 nav-link`} onClick={handleLogout} >Logout</button>
+            <Link className={`mx-2 nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">ABOUT</Link>
+            <button className={`mx-1 nav-link`} onClick={handleLogout} >LOGOUT</button>
             {/* </form> */}
           </div>
         </div>

@@ -12,8 +12,8 @@ const Filter = ({ filterOptions, onFilterChange }) => {
   };
 
   return (
-    <div>
-      <h4>Filter by:</h4>
+    <div className='fil'>
+      <h4>FILTER BY</h4>
       <div>
         <label>Platforms</label>
         <div>

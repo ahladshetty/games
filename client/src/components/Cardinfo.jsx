@@ -27,7 +27,7 @@ const Cardinfo = () => {
     <div className="cardinfo-container">
       {gameDetails ? (
         <div className="game-details ">
-          <h2 className='text-center' style={{ fontSize: '35px' }}>{gameDetails.name}</h2>
+          <h2 className='text-center' style={{ fontSize: '60px' }}>{gameDetails.name}</h2>
           <img src={gameDetails.background_image} alt={gameDetails.name} />
           <p>Release Year: {new Date(gameDetails.released).getFullYear()}</p>
           <p>Playtime: {gameDetails.playtime} hours</p>
@@ -36,7 +36,7 @@ const Cardinfo = () => {
           <p>Metacritic Score: {gameDetails.metacritic}</p>
           <p>Genres: {gameDetails.genres.join(', ')}</p>
           <p>Developers: {gameDetails.developers.join(', ')}</p>
-          <p className='text-center' style={{ fontSize: '35px' }}>Screenshots</p>
+          <p className='text-center' style={{ fontSize: '35px' }}>SCREENSHOTS</p>
           <div className="screenshots">
             {gameDetails.short_screenshots.map((screenshot, index) => (
               <img key={index} src={screenshot} alt={`Screenshot ${index + 1}`} />
