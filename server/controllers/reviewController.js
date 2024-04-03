@@ -13,7 +13,6 @@ export const addReview=async(req,res)=>{
               msg:"matha values padle"
           })
       }
-  console.log(description);
       const user= await User.findById({_id:userId})
   
       if(!user){

@@ -5,6 +5,7 @@ import reviewRouter from './routes/reviewRoutes.js'
 import listRouter from './routes/listRoutes.js'
 import connectToDatabase from './DB/db.js';
 import cors from 'cors';
+import 'dotenv/config'
 
 const app = express();
 const port = 5005;
