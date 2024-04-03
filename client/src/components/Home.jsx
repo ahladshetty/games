@@ -3,6 +3,7 @@ import Card from './Card';
 import Search from './Search';
 import Navbar from './Navbar';
 import Filter from './Filter'; // Import the Filter component
+import "./css/home.css";
 
 const Home = () => {
   const [games, setGames] = useState([]);
@@ -82,9 +83,11 @@ const Home = () => {
 
   return (
     <>
+    <div className="overlay-image"></div>
+    <div className="overlay-image2"></div>
       <Navbar />
-      <div className="container my-4 ">
-        <h2>Games Catalogue</h2>
+      <div className="container">
+        <h2>GAMES CATALOGUE</h2>
         <div className="row">
           <div className="col-3 my-2">
             <Search onSearch={handleSearch} />

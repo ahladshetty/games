@@ -39,6 +39,14 @@ const Login = () => {
   return (
     <>
       <div className="full-screen bg-login">
+        <div className="only">
+          <h1>GOBBU</h1>
+        </div>
+        <div class="menubar">
+        <ul>
+          <li><a href="link">SIGNUP</a></li>
+         </ul>
+        </div>
         <div className="login-container ">
           <div className="row justify-content-center">
             <div className="login-form">
@@ -54,7 +62,7 @@ const Login = () => {
                     onChange={onChange}
                     id="uname"
                     name="uname"
-                    placeholder="Enter your username"
+                    placeholder="USERNAME"
                   />
                 </div>
                 <div>
@@ -67,7 +75,7 @@ const Login = () => {
                     onChange={onChange}
                     name="password"
                     id="password"
-                    placeholder="Enter your password"
+                    placeholder="PASSWORD"
                   />
                 </div>
                 <div>
