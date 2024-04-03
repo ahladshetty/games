@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import Navbar from './Navbar';
 import "./css/list.css"
 
 const List = () => {
@@ -22,6 +23,8 @@ const List = () => {
   }, []);
 
   return (
+    <>
+    <Navbar />
     <div className="list-container">
       <h2>All Lists</h2>
       <div className="card-container">
@@ -37,6 +40,7 @@ const List = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
