@@ -14,7 +14,7 @@
     margin-bottom: 40px;
     margin-top: 40px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    background-image: url('C:\Users\ragch\Documents\mini\games\client\public\Asset 2.png'); /* Set the background image */
+    background-image: url('../../../public/Asset 2.png'); /* Set the background image */
     background-repeat: no-repeat; /* Prevent the background image from repeating */
     background-position: center; /* Center the background image */
     background-size: 1000px;

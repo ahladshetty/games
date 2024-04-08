@@ -15,7 +15,7 @@ const Filter = ({ filterOptions, onFilterChange }) => {
     <div className='fil'>
       <h4>FILTER BY</h4>
       <div>
-        <label>Platforms</label>
+        {/* <label>Platforms</label> */}
         <div>
           <button onClick={toggleOptions}>Platforms ▼</button> {/* Button to toggle visibility */}
           {showOptions && ( // Render filter options only if showOptions is true
@@ -31,7 +31,7 @@ const Filter = ({ filterOptions, onFilterChange }) => {
       </div>
 
       <div>
-        <label>Genres</label>
+        <label></label>
         <div>
           <button onClick={toggleOptions}>Genres ▼</button> {/* Button to toggle visibility */}
           {showOptions && ( // Render filter options only if showOptions is true
@@ -47,7 +47,7 @@ const Filter = ({ filterOptions, onFilterChange }) => {
       </div>
 
       <div>
-        <label>Ratings</label>
+        <label></label>
         <div>
           <button onClick={toggleOptions}>Ratings ▼</button> {/* Button to toggle visibility */}
           {showOptions && ( // Render filter options only if showOptions is true

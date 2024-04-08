@@ -27,7 +27,7 @@
   
   @font-face {
     font-family: newFont;
-    src: url(C:\Users\ragch\Documents\mini\games\client\fonts\MonumentExtended-Ultrabold.ttf);
+    src: url('../../../fonts/MonumentExtended-Ultrabold.ttf');
   }
   .only h1 {
     position: fixed;

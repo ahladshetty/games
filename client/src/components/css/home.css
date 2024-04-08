@@ -1,6 +1,8 @@
 body {
     position: relative;
     background: linear-gradient(to top, #5B0B88,#73286D);
+    /* background: linear-gradient(90deg, rgba(167,0,0,1) 0%, rgba(151,4,4,1) 30%, rgba(101,0,0,1) 100%); */
+
     background-size: cover; /* Ensure the background image covers the entire viewport */
     background-position: center; /* Center the background image */
   }
@@ -11,7 +13,7 @@ body {
     left: 0; /* Position it at the left */
     width: 100%; /* Make it cover the entire container horizontally */
     height: 40%; /* Make it cover the entire container vertically */
-    background-image: url('C:\Users\ragch\Documents\mini\games\client\public\—Pngtree—white flash_5614442.png'); /* Set the overlay image */
+    background-image: url('../../../public/—Pngtree—white\ flash_5614442.png'); /* Set the overlay image */
     background-size: cover; /* Ensure the overlay image covers the container */
     background-position: center; /* Center the overlay image */
     opacity: 30%; /* Adjust the opacity as needed */
@@ -22,7 +24,7 @@ body {
     left: 0; /* Position it at the left */
     width: 100%; /* Make it cover the entire container horizontally */
     height: 60%; /* Make it cover the entire container vertically */
-    background-image: url('C:\Users\ragch\Documents\mini\games\client\public\—Pngtree—white flash_5614442.png'); /* Set the overlay image */
+    background-image: url('../../../public/—Pngtree—white\ flash_5614442.png'); /* Set the overlay image */
     background-size: cover; /* Ensure the overlay image covers the container */
     background-position: bottom; /* Center the overlay image */
     opacity: 30%; /* Adjust the opacity as needed */
@@ -30,11 +32,11 @@ body {
 
   @font-face {
     font-family: newFont;
-    src: url(C:\Users\ragch\Documents\mini\games\client\fonts\MonumentExtended-Ultrabold.ttf);
+    src: url('../../../fonts/MonumentExtended-Ultrabold.ttf');
   }
   @font-face {
     font-family: newFont1;
-    src: url(C:\Users\ragch\Documents\mini\games\client\fonts\MonumentExtended-Regular.ttf);
+    src: url('../../../fonts/MonumentExtended-Regular.ttf');
   }
 
   .container h2 {
