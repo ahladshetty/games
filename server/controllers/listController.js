@@ -1,6 +1,6 @@
 import List from "../models/List.js";
 
-// ROUTE 1: list games using GET '/games'
+// ROUTE 1: create list using GET '/createlist'
 export const createList = async (req, res) => {
   try {
     const { title, description, gameIds } = req.body;

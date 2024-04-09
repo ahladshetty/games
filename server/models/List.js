@@ -10,7 +10,7 @@ const gameListSchema = new mongoose.Schema({
     required: true
   },
   games: [{
-    type: Number,
+    type: String,
     ref: 'Game' // Assuming your game schema is named 'Game'
   }]
 });

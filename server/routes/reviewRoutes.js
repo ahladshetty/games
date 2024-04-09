@@ -1,6 +1,6 @@
 import express from 'express'
 
-import { addreview, showreviews, deletereview } from '../controllers/reviewController.js'
+import { addReview, showReviews, deleteReview } from '../controllers/reviewController.js'
 import userAuth from '../middleware/auth.js'
 
 const router = express.Router()

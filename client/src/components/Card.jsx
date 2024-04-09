@@ -21,7 +21,7 @@ const Card = ({ games }) => {
   }
   let navigate = useNavigate();
   const handleClick = (game) => {
-    navigate(`/cardinfo/${game.id}`)
+    navigate(`/cardinfo/${game._id}`)
   }
 
   return (

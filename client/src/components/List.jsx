@@ -34,6 +34,7 @@ const List = () => {
             <p>{list.description}</p>
             <p><h3><span className="badge bg-secondary">{list.games.length} games</span></h3></p>
 
+
             {/* Add Link to navigate to ListDetails component */}
             <Link to={`/listinfo/${list._id}`} className="btn btn-success">View Details</Link>
           </div>

@@ -20,7 +20,7 @@ export const showGames = async (req, res) => {
 // ROUTE 2: get game details using GET '/gameinfo'
 export const gameInfo = async (req, res) => {
   try {
-    const game = await Game.findOne({id : req.params.id});
+    const game = await Game.findById(req.params.id);
     if (!game) {
       return res.status(400).send('Cant get game details');
     }
