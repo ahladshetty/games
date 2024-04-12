@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import "./css/cardinfo.css";
 import Review from './Review';
+import Navbar from './Navbar';
 
 const Cardinfo = () => {
   const { id } = useParams();
@@ -25,6 +26,8 @@ const Cardinfo = () => {
   }, [id]);
 
   return (
+    <>
+    <Navbar/>
     <div className="cardinfo-container">
       {gameDetails ? (
         <div className="game-details ">
@@ -51,6 +54,7 @@ const Cardinfo = () => {
     <Review gameId={id} />
 
     </div>
+    </>
   );
 };
 

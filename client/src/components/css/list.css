@@ -1,9 +1,13 @@
-/* Add this CSS to your stylesheet */
-
-.list-container {
-    margin: 20px;
+  .list-container {
+      margin: 20px;
   }
-  
+
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+    
   .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

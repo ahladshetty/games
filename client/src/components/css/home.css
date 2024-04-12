@@ -8,7 +8,7 @@ body {
   }
 
   .overlay-image {
-    position: absolute; /* Position the overlay image absolutely */
+    position: relative; /* Position the overlay image absolutely */
     top: 0; /* Position it at the top */
     left: 0; /* Position it at the left */
     width: 100%; /* Make it cover the entire container horizontally */

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 
 const Listinfo = () => {
@@ -45,6 +46,8 @@ const Listinfo = () => {
   }
 
   return (
+    <>
+    <Navbar/>
     <div className="container">
       <h2>List Details</h2>
       <h3>{list.title}</h3>
@@ -66,6 +69,7 @@ const Listinfo = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

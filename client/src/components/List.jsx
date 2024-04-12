@@ -26,7 +26,11 @@ const List = () => {
     <>
     <Navbar />
     <div className="list-container">
+    <div className="list-header">
       <h2>All Lists</h2>
+      <Link to="/createlist" className="btn btn-success" style={{ width: 'fit-content' }}>Create List</Link>
+  </div>
+      
       <div className="card-container">
         {lists.map(list => (
           <div key={list._id} className="card">
