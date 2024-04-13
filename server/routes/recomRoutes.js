@@ -4,7 +4,7 @@ import { findSimilarGames, findRecommendations } from '../controllers/recomContr
 const router = express.Router();
 
 // Route to compute similarity between games
-router.get('/similiargames/:gameId', findSimilarGames);
-router.post('/recomgames', findRecommendations);
+router.get('/recom/similiargames/:gameId', findSimilarGames);
+router.post('/recom/recomgames', findRecommendations);
 
 export default router;

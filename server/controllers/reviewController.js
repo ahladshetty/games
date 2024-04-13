@@ -4,9 +4,9 @@ import User from "../models/User.js";
 // ROUTE 1: add reviews using POST '/addReview/:gameId'
 export const addReview=async(req,res)=>{
   try {
-      const {description, rating   }=req.body;
-      const{userId, userName} =req.user
-      const {gameId} = req.params
+      const { description, rating } = req.body;
+      const { userId, userName } = req.user;
+      const { gameId } = req.params;
  
       if(!description|| !rating || !userId || !userName || !gameId){
           return res.status(400).json({

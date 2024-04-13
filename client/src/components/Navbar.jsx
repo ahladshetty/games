@@ -41,8 +41,11 @@ const Navbar = () => {
                 <Link className={`nav-link ${location.pathname === "/lists" ? "active" : ""}`} to="/lists">LISTS</Link>
               </li>
             </ul>
+
             {user?.user?.role==="staff" && <Link className={`mx-2 nav-link ${location.pathname === "/editmenu" ? "active" : ""}`} to="/editmenu" >EditMenu</Link>}
             {user?.user?.role==="staff" && <Link className={`mx-2 nav-link ${location.pathname === "/signup" ? "active" : ""}`} to="/signup" >Signup</Link>}
+
+            <Link className={`mx-2 nav-link ${location.pathname === "/wishlist" ? "active" : ""}`} to="/wishlist">WISHLIST</Link>
             <Link className={`mx-2 nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">ABOUT</Link>
             <button className={`mx-1 nav-link`} onClick={handleLogout} >LOGOUT</button>
             {/* </form> */}

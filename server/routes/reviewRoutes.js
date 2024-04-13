@@ -5,8 +5,8 @@ import userAuth from '../middleware/auth.js'
 
 const router = express.Router()
 
-router.post('/addreview/:gameId', userAuth, addReview)
-router.get('/showreviews/:gameId', userAuth, showReviews)
-router.delete('/deletereview/:reviewId', userAuth, deleteReview)
+router.post('/reviews/addreview/:gameId', userAuth, addReview)
+router.get('/reviews/showreviews/:gameId', userAuth, showReviews)
+router.delete('/reviews/deletereview/:reviewId', userAuth, deleteReview)
 
 export default router

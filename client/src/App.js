@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Createlist from "./components/Createlist";
+import Wishlist from "./components/Wishlist";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/lists" element={<List />} />
           <Route path="/listinfo/:id" element={<Listinfo />} />
           <Route path="/createlist" element={<Createlist />} />
+          <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
       </BrowserRouter>
     </div>

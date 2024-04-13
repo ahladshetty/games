@@ -4,8 +4,8 @@ import { addUser, loginUser } from '../controllers/userController.js'
 
 const router = express.Router()
 
-router.post('/adduser',addUser)
+router.post('/auth/adduser',addUser)
 
-router.post('/loginuser',loginUser)
+router.post('/auth/loginuser',loginUser)
 
 export default router
