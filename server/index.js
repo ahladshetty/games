@@ -3,6 +3,7 @@ import userRouter from './routes/userRoutes.js';
 import gameRouter from './routes/gameRoutes.js';
 import reviewRouter from './routes/reviewRoutes.js'
 import listRouter from './routes/listRoutes.js'
+import recomRouter from "./routes/recomRoutes.js";
 import connectToDatabase from './DB/db.js';
 import cors from 'cors';
 import 'dotenv/config'
@@ -16,6 +17,7 @@ app.use(userRouter);
 app.use(gameRouter);
 app.use(reviewRouter);
 app.use(listRouter);
+app.use(recomRouter);
 
 // Set up database connection
 connectToDatabase()
