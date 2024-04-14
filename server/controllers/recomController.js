@@ -29,7 +29,7 @@ export const findSimilarGames = async (req, res) => {
         metacritic: { $gte: criteria.metacritic.$gte }
       }).limit(100); // Limiting the number of results to 10
   
-      const randomGames = shuffle(similarGames).slice(0, 10); // function below
+      const randomGames = shuffle(similarGames).slice(0, 8); // function below
   
       console.log(randomGames.map(game => game.name).join('\n'));
       res.json(randomGames);
@@ -60,7 +60,7 @@ export const findRecommendations = async (req, res) => {
       const criteria = {
         genres: selectedGame.genres,
         released: selectedGame.released,
-        rating: { $gte: 4 }, // Minimum rating threshold
+        rating: { $gte: 3.7 }, // Minimum rating threshold
         metacritic: { $gte: 74 }
       };
 
@@ -85,7 +85,7 @@ export const findRecommendations = async (req, res) => {
 
     const shuffledRecommendations = shuffle(uniqueRecommendations); // function below
 
-    const finalRecommendations = shuffledRecommendations.slice(0, 10);
+    const finalRecommendations = shuffledRecommendations.slice(0, 8);
 
     res.json(finalRecommendations);
     console.log(finalRecommendations.map(game => game.name).join('\n'));

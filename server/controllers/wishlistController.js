@@ -72,3 +72,32 @@ export const getUserWishlist = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
+// ROUTE 4: get recommendtions from wishlist using GET '/wishlist/recommendations'
+import { findRecommendations } from './recomController.js';
+
+export const getRecommendationsFromWishlist = async (req, res) => {
+  try {
+    // Retrieve the current user's wishlist
+    const { userId } = req.user;
+    const wishlist = await Wishlist.findOne({ userId });
+
+    if (!wishlist || !wishlist.games.length) {
+      return res.status(400).json({ message: 'Wishlist is empty' });
+    }
+
+    // Extract game IDs from the wishlist
+    const gameIds = wishlist.games;
+
+    // Call findRecommendations function with wishlist game IDs as request body
+    const recommendations = await findRecommendations({ body: { gameIds } }, res);
+
+    // Return the recommendations generated from the wishlist
+    res.json(recommendations);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+

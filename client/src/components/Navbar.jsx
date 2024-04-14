@@ -18,7 +18,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/about">
-            COOLDOWN
+            GOBBU
           </Link>
           <button
             className="navbar-toggler"
@@ -42,13 +42,17 @@ const Navbar = () => {
               </li>
             </ul>
 
-            {user?.user?.role==="staff" && <Link className={`mx-2 nav-link ${location.pathname === "/editmenu" ? "active" : ""}`} to="/editmenu" >EditMenu</Link>}
-            {user?.user?.role==="staff" && <Link className={`mx-2 nav-link ${location.pathname === "/signup" ? "active" : ""}`} to="/signup" >Signup</Link>}
-
+            {user?.user?.role === "staff" && (
+            <>
+              <Link className={`mx-2 nav-link ${location.pathname === "/editmenu" ? "active" : ""}`} to="/editmenu">EditMenu</Link>
+              <Link className={`mx-2 nav-link ${location.pathname === "/signup" ? "active" : ""}`} to="/signup">Signup</Link>
+            </>
+            )}
             <Link className={`mx-2 nav-link ${location.pathname === "/wishlist" ? "active" : ""}`} to="/wishlist">WISHLIST</Link>
             <Link className={`mx-2 nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">ABOUT</Link>
-            <button className={`mx-1 nav-link`} onClick={handleLogout} >LOGOUT</button>
+            <button className="mx-1 nav-link" onClick={handleLogout}>LOGOUT</button>
             {/* </form> */}
+            
           </div>
         </div>
       </nav>
@@ -56,3 +60,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

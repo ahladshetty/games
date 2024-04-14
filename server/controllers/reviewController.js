@@ -49,7 +49,6 @@ export const addReview=async(req,res)=>{
 
 // ROUTE 2: show all reviews using GET '/showreviews/:gameId'
 export const showReviews = async (req, res) => {
-  console.log("h");
   try {
     const { gameId } = req.params;
 
