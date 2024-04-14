@@ -29,7 +29,7 @@ const Wishlist = () => {
 
 // Fetch details for each game in the list
 const gameDetailsPromises = data.games.map(async gameId => {
-  const gameResponse = await fetch(`http://localhost:5005/gameinfo/${gameId}`);
+  const gameResponse = await fetch(`http://localhost:5005/games/gameinfo/${gameId}`);
   const gameData = await gameResponse.json();
   return gameData;
 });

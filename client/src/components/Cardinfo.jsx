@@ -11,7 +11,7 @@ const Cardinfo = () => {
   useEffect(() => {
     const fetchGameDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5005/gameinfo/${id}`);
+        const response = await fetch(`http://localhost:5005/games/gameinfo/${id}`);
         if (!response.ok) {
           throw new Error('Failed to fetch game details');
         }

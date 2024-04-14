@@ -16,7 +16,7 @@ const Createlist = () => {
   // Function to fetch all games
   const fetchAllGames = async () => {
     try {
-      const response = await fetch('http://localhost:5005/games');
+      const response = await fetch('http://localhost:5005/games/show');
       if (response.ok) {
         const data = await response.json();
         setAllGames(data);
@@ -51,7 +51,7 @@ const Createlist = () => {
 
     try {
       // Make a POST request to create the list
-      const response = await fetch('http://localhost:5005/createlist', {
+      const response = await fetch('http://localhost:5005/lists/createlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

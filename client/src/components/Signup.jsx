@@ -15,7 +15,7 @@ const Signup = () => {
     console.log("hola");
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5005/adduser', {
+      const response = await fetch('http://localhost:5005/auth/adduser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

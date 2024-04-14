@@ -14,13 +14,13 @@ const Listinfo = () => {
   useEffect(() => {
     const fetchListDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:5005/listinfo/${id}`);
+        const response = await fetch(`http://localhost:5005/lists/listinfo/${id}`);
         const data = await response.json();
         setList(data);
         
         // Fetch details for each game in the list
         const gameDetailsPromises = data.games.map(async gameId => {
-          const gameResponse = await fetch(`http://localhost:5005/gameinfo/${gameId}`);
+          const gameResponse = await fetch(`http://localhost:5005/games/gameinfo/${gameId}`);
           const gameData = await gameResponse.json();
           return gameData;
         });

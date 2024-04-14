@@ -8,7 +8,7 @@ const Review = ({ gameId }) => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch(`http://localhost:5005/showreviews/${gameId}`);
+        const response = await fetch(`http://localhost:5005/reviews/showreviews/${gameId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch reviews');
         }
@@ -42,14 +42,18 @@ const Review = ({ gameId }) => {
   return (
     <div>
       <h2>Reviews for Game {gameId}</h2>
-      <ul>
-        {reviews.map((review, index) => (
-          <li key={index}>
-            <p>{review.text}</p>
-            <p>Rating: {review.rating}</p>
-          </li>
-        ))}
-      </ul>
+      {reviews.length === 0 ? (
+        <p>No reviews available for this game.</p>
+      ) : (
+        <ul>
+          {reviews.map((review, index) => (
+            <li key={index}>
+              <p>{review.description}</p>
+              <p>Rating: {review.rating}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

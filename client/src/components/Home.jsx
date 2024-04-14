@@ -21,7 +21,7 @@ const Home = () => {
 
   const fetchGames = useCallback(async () => {
     try {
-      const response = await fetch('http://localhost:5005/games');
+      const response = await fetch('http://localhost:5005/games/show');
       if (!response.ok) {
         throw new Error('Failed to fetch games');
       }

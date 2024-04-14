@@ -37,7 +37,7 @@ export const addReview=async(req,res)=>{
 
 
       res.status(201).json({
-        msg:"game created successfully "
+        msg:"review added successfully "
       })
   } catch (error) {
     console.log(error);

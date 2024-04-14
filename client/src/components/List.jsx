@@ -11,7 +11,7 @@ const List = () => {
   useEffect(() => {
     const fetchLists = async () => {
       try {
-        const response = await fetch('http://localhost:5005/lists');
+        const response = await fetch('http://localhost:5005/lists/show');
         const data = await response.json();
         setLists(data);
       } catch (error) {
