@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Outline&family=Bungee+Spice&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-plp{
+  color:#20014F;
+}
+
 .App {
   text-align: center;
 }
@@ -28,11 +39,134 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes Applogospin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes moving{
+  form{
+    transform: translateX(-300px);
+  }
+  to{
+    transform: translateX(0px);
+  }
+}
+.spin{
+  animation: Applogospin;
+  animation-duration:2s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+
+.leftmove{
+  animation: moving;
+  animation-duration:1s;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  transform: translateX(-150px);
+}
+
+@keyframes jump{
+  0%
+  ,20%
+  ,70%
+  ,100%
+  ,30%
+  ,50%{
+    transform: translateY(0);
+  }
+
+  40%{
+    transform: translateY(-30px);
+  }
+  60%{
+    transform: translateY(-15px);
+  }
+
+}
+
+@keyframes jump2{
+  0%
+  ,20%
+  ,70%
+  ,100%
+  ,30%
+  ,50%{
+    transform: translateY(0);
+  }
+
+  40%{
+    transform: translateY(-10px);
+  }
+  60%{
+    transform: translateY(-8px);
+  }
+
+}
+
+.bounce1{
+  animation: jump2;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: normals;
+  animation-fill-mode: none;
+}
+
+.bounce{
+  animation: jump;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: normals;
+  animation-fill-mode: none;
+}
+
+@keyframes leftside{
+  0%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  70%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+}
+
+.movele{
+  animation: leftside;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-direction: normals;
+  animation-fill-mode: none;
+}
+
+.delay1{
+  animation-delay: 3s;
+}
+.delay2{
+  animation-delay: 6s;
+}
+.delay3{
+  animation-delay: 4.5s;
+}
+.delay4{
+  animation-delay: 2s;
+}
+.delay5{
+  animation-delay: 7s;
 }

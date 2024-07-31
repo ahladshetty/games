@@ -36,16 +36,17 @@ const Recommend = () => {
 
   return (
     <>
-    <div className="container">
-      <h2>Recommendations from Wishlist</h2>
-
-      <div className="row">
+      <div className='flex justify-center'>
+      <h2 className='font-body3 text-white mt-7 text-4xl mb-9 bg-green-700 p-3 rounded-2xl'>Recommendations from Wishlist</h2>
+      </div>
+      <div className='font-body3'>
+      <div id='slider' className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth'>
       {recommendations.map(game => (
-        <div key={game._id} className="col-md-3 mb-3">
-          <div onClick={() => handleClick(game)} className="card">
-            <img src={game.background_image} className="card-img-top" alt={game.name} />
-            <div className="card-body">
-            <h5 className="card-title">{game.name}</h5>
+        <div key={game._id} className="inline-block h-auto w-auto md:w-64 lg:w-64 xl:w-64 p-4 rounded-2xl drop-shadow-[0px_4px_6px_rgba(0,0,0,0.5)] hover:scale-95 transition duration-150 ease-in-out ">
+          <div onClick={() => handleClick(game)} className="card h-full border-5 border-white rounded-2xl">
+            <img src={game.background_image} className="card-img-top h-40 w-full border-3 border-black border-opacity-100 object-cover rounded-2xl" alt={game.name} />
+            <div className="card-body ">
+            <h5 className="card-title text-xl">{game.name}</h5>
             <p className="card-text">Release Year: {new Date(game.released).getFullYear()}</p>
             {/* <p>Rating: {game.rating}</p>
             <p>Metacritic Score: {game.metacritic}</p> */}
@@ -54,8 +55,8 @@ const Recommend = () => {
         </div>
         </div>
         ))}
-      </div>
-    </div>
+        </div>
+        </div>
     </>
   );
 };

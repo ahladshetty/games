@@ -41,13 +41,12 @@ const Review = ({ gameId }) => {
 
   return (
     <div>
-      <h2>Reviews for Game {gameId}</h2>
       {reviews.length === 0 ? (
-        <p>No reviews available for this game.</p>
+        <p className=' bg-white bg-opacity-50 mb-9 p-4 rounded-2xl font-body3 text-white space-x-5'>No reviews available for this game.</p>
       ) : (
         <ul>
           {reviews.map((review, index) => (
-            <li key={index}>
+            <li key={index} className=' bg-white bg-opacity-50 mb-9 p-4 rounded-2xl font-body3 text-white space-x-5'>
               <p>{review.description}</p>
               <p>Rating: {review.rating}</p>
             </li>

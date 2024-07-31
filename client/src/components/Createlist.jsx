@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import "./css/createlist.css";
 import Navbar from './Navbar';
-
+import hbg from '../../src/images/homebg2.svg'
 const Createlist = () => {
   // State for form fields
   const [title, setTitle] = useState('');
@@ -109,66 +109,71 @@ const Createlist = () => {
 
   return (
     <>
-    <Navbar/>
-    <div className="create-list-container">
-      <h2>Create New List</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="title" className="label">Title:</label>
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="input"
-            required
-          />
+      <Navbar/>
+      <div className="bg-black bg-opacity-50 bg-cover bg-center min-h-screen flex flex-col justify-center items-center" style={{
+        backgroundImage: `url(${hbg})`}}>
+        <div className='font-body3 text-white h-auto mt-5' style={{ width: '500px'}}> {/* Adjust width as needed */}
+          <h2 className='text-3xl flex justify-center mb-5 p-2 bg-green-700 rounded-2xl w-auto h-auto'>Create New List</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="title" className="label">Title:</label>
+              <input
+                type="text"
+                id="title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className="relative input text-black text-opacity-50 "
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="description" className="label">Description:</label>
+              <textarea
+                id="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                className="relative textarea  text-black text-opacity-50"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="gameSearch" className="label">Search for Games:</label>
+              <input
+                type="text"
+                id="gameSearch"
+                value={searchTerm}
+                onChange={handleSearchChange}
+                className="relative search-input  text-black text-opacity-50"
+              />
+              <div className="mt-4 rounded-md" style={{ maxHeight: '200px', overflowY: 'auto' }}>
+                <ul className="game-list">
+                  {selectedGameNames.map((name) => (
+                    <li key={name} className="selected-game" onClick={() => handleGameDeselect(gameIds[selectedGameNames.indexOf(name)], name)}>
+                      {name}
+                    </li>
+                  ))}
+                </ul>
+                <ul className="game-list">
+                  {filteredGames.map((game) => (
+                    <li
+                      key={game._id}
+                      onClick={() => handleGameSelect(game._id, game.name)}
+                      className={`game-item ${gameIds.includes(game._id) ? 'selected' : ''}`}
+                    >
+                               {game.name} {gameIds.includes(game._id) ? '(Selected)' : ''}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className='flex justify-center'>
+            <button type="submit" className="mb-5 p-2 bg-green-700 rounded-2xl w-60 h-auto transform hover:scale-105 hover:bg-opacity-80 transition duration-150 ease-in-out">Create List</button>
+            </div>
+          </form>
         </div>
-        <div className="form-group">
-          <label htmlFor="description" className="label">Description:</label>
-          <textarea
-            id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="textarea"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="gameSearch" className="label">Search for Games:</label>
-          <input
-            type="text"
-            id="gameSearch"
-            value={searchTerm}
-            onChange={handleSearchChange}
-            className="search-input"
-          />
-          <div style={{ maxHeight: '200px', overflowY: 'auto' }}>
-          <ul className="game-list">
-            {selectedGameNames.map((name) => (
-              <li key={name} className="selected-game" onClick={() => handleGameDeselect(gameIds[selectedGameNames.indexOf(name)], name)}>
-                {name}
-              </li>
-            ))}
-          </ul>
-          <ul className="game-list">
-            {filteredGames.map((game) => (
-              <li
-                key={game._id}
-                onClick={() => handleGameSelect(game._id, game.name)}
-                className={`game-item ${gameIds.includes(game._id) ? 'selected' : ''}`}
-              >
-                {game.name} {gameIds.includes(game._id) ? '(Selected)' : ''}
-              </li>
-            ))}
-          </ul>
-        </div>
-        </div>
-        <button type="submit" className="submit-button">Create List</button>
-      </form>
-    </div>
+      </div>
     </>
-  );
+  );  
 };
 
 export default Createlist;

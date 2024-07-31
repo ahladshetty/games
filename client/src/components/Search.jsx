@@ -10,13 +10,13 @@ const Search = ({ onSearch }) => {
   };
 
   return (
-    <div className="mb-4">
+    <div className="mb-4 font-body3 text-opacity-20 drop-shadow-[2px_5px_2px_rgba(0,0,0,0.5)] ">
       <input
         type="text"
         placeholder="Search games..."
         value={query}
         onChange={handleChange}
-        className="form-control"
+        className="form-control w-96 rounded-2nxl"
       />
     </div>
   );
