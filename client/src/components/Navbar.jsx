@@ -5,8 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   let navigate = useNavigate();
   const location = useLocation();
-  let user = localStorage.getItem('user')
-  user = user ? JSON.parse(user) : null
+  // let user = localStorage.getItem('user')
+  // user = user ? JSON.parse(user) : null
 
   const handleLogout = ()=>{
     localStorage.removeItem('user')
@@ -14,7 +14,7 @@ const Navbar = () => {
     navigate('/login')
   }
   return (
-  <nav className="flex justify-between items-center w-[80%] bg-purple-950 h-16 w-auto mx-auto px-9 drop-shadow-[0px_4px_0px_rgba(0,0,0,0.2)]"> 
+  <nav className="flex justify-between items-center w-[80%] bg-purple-950 h-16 mx-auto px-9 drop-shadow-[0px_4px_0px_rgba(0,0,0,0.2)]"> 
         <div className='absolute flex justify-start left-7'>
         <h2 className='font-body text-3xl bounce1'>GOBBU</h2>
       </div>

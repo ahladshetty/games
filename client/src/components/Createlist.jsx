@@ -1,11 +1,10 @@
-// CreateList.jsx
-
 import React, { useState, useEffect } from 'react';
 import "./css/createlist.css";
 import Navbar from './Navbar';
 import hbg from '../../src/images/homebg2.svg'
+
 const Createlist = () => {
-  // State for form fields
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [gameIds, setGameIds] = useState([]);
@@ -13,7 +12,6 @@ const Createlist = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGameNames, setSelectedGameNames] = useState([]);
 
-  // Function to fetch all games
   const fetchAllGames = async () => {
     try {
       const response = await fetch('http://localhost:5005/games/show');
@@ -32,17 +30,14 @@ const Createlist = () => {
     fetchAllGames();
   }, []);
 
-  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validate form fields
-    if (!title.trim() || !description.trim()) {
+    if (!title.trim() || !description.trim()) { // Validate form fields
       alert('Please fill out all required fields.');
       return;
     }
 
-    // Construct the list object
     const newList = {
       title,
       description,
@@ -50,7 +45,6 @@ const Createlist = () => {
     };
 
     try {
-      // Make a POST request to create the list
       const response = await fetch('http://localhost:5005/lists/createlist', {
         method: 'POST',
         headers: {
@@ -59,60 +53,52 @@ const Createlist = () => {
         body: JSON.stringify(newList),
       });
 
-      if (response.ok) {
-        // Reset form fields after successful creation
+      if (response.ok) { // Reset form fields after successful creation
         setTitle('');
         setDescription('');
         setGameIds([]);
         setSelectedGameNames([]);
         alert('List created successfully!');
       } else {
-        // Handle errors
         const errorData = await response.json();
         alert('Error: ' + errorData.error);
       }
     } catch (error) {
-      // Handle network errors
       console.error('Error:', error);
       alert('An error occurred while creating the list.');
     }
   };
 
-  // Function to handle game selection
   const handleGameSelect = (gameId, gameName) => {
     if (gameIds.includes(gameId)) {
-      // Deselect the game if it's already selected
       setGameIds(gameIds.filter((_id) => _id !== gameId));
       setSelectedGameNames(selectedGameNames.filter((name) => name !== gameName));
     } else {
-      // Select the game if it's not already selected
       setGameIds([...gameIds, gameId]);
       setSelectedGameNames([...selectedGameNames, gameName]);
     }
   };
 
-  // Function to handle game deselection from the selected game list
   const handleGameDeselect = (gameId, gameName) => {
     setGameIds(gameIds.filter((_id) => _id !== gameId));
     setSelectedGameNames(selectedGameNames.filter((name) => name !== gameName));
   };
 
-  // Function to handle search input change
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  // Filter games based on search term
   const filteredGames = allGames.filter((game) =>
     game.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="bg-black bg-opacity-50 bg-cover bg-center min-h-screen flex flex-col justify-center items-center" style={{
-        backgroundImage: `url(${hbg})`}}>
-        <div className='font-body3 text-white h-auto mt-5' style={{ width: '500px'}}> {/* Adjust width as needed */}
+        backgroundImage: `url(${hbg})`
+      }}>
+        <div className='font-body3 text-white h-auto mt-5' style={{ width: '500px' }}> {/* Adjust width as needed */}
           <h2 className='text-3xl flex justify-center mb-5 p-2 bg-green-700 rounded-2xl w-auto h-auto'>Create New List</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -160,20 +146,20 @@ const Createlist = () => {
                       onClick={() => handleGameSelect(game._id, game.name)}
                       className={`game-item ${gameIds.includes(game._id) ? 'selected' : ''}`}
                     >
-                               {game.name} {gameIds.includes(game._id) ? '(Selected)' : ''}
+                      {game.name} {gameIds.includes(game._id) ? '(Selected)' : ''}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
             <div className='flex justify-center'>
-            <button type="submit" className="mb-5 p-2 bg-green-700 rounded-2xl w-60 h-auto transform hover:scale-105 hover:bg-opacity-80 transition duration-150 ease-in-out">Create List</button>
+              <button type="submit" className="mb-5 p-2 bg-green-700 rounded-2xl w-60 h-auto transform hover:scale-105 hover:bg-opacity-80 transition duration-150 ease-in-out">Create List</button>
             </div>
           </form>
         </div>
       </div>
     </>
-  );  
+  );
 };
 
 export default Createlist;

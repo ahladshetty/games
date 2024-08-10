@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import Pages from './Pages'; // Import the Pages component
+import Pages from './Pages'; 
 import { useNavigate} from 'react-router-dom';
 
 const Card = ({ games }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [gamesPerPage] = useState(32); // Number of games to display per page
+  const [gamesPerPage] = useState(32); // Number of games per page
 
   useEffect(() => {
     setCurrentPage(1); // Reset to first page whenever games change
   }, [games]);
 
-  // Get current games
   const indexOfLastGame = currentPage * gamesPerPage;
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
   const currentGames = games.slice(indexOfFirstGame, indexOfLastGame);
 
-  // Change page
   const paginate = (pageNumber) => { 
     setCurrentPage(pageNumber); 
     window.scrollTo(0, 0);
@@ -42,13 +40,13 @@ const Card = ({ games }) => {
             </div>
           </div>
         ))}
-        {/* Render additional empty card placeholders to fill the page */}
+        {/* additional empty card placeholders to fill the page */}
         {Array.from({ length: Math.max(0, Math.ceil(currentGames.length / 4) * 4 - currentGames.length) }).map((_, index) => (
           <div key={`empty-${index}`} className="w-72 md:w-1/4 lg:w-1/4 xl:w-1/4 p-4"></div>
         ))}
       </div>
   
-      {/* Render pagination component */}
+      {/* pagination component */}
       <div className='font-body3'>
       <Pages currentPage={currentPage} totalPages={Math.ceil(games.length / gamesPerPage)} onPageChange={paginate} />
       </div>

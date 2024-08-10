@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 const userAuth = async (req, res, next) => {
-    const JWT_SECRET = 'supasecreto'
+    const JWT_SECRET = process.env.SECRET
     const authHeader = req.headers.authorization;
     console.log(authHeader);
     if (!authHeader || !authHeader.startsWith("Bearer")) {

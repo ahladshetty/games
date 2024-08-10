@@ -14,8 +14,7 @@ import About from "./components/About";
 function App() {
   return (
     <div className="card-info" >
-{/* style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/back23.png)` }} */}
-
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

@@ -29,7 +29,6 @@ const Wishlist = () => {
       const data = await response.json();
       setWishlist(data);
 
-// Fetch details for each game in the list
 const gameDetailsPromises = data.games.map(async gameId => {
   const gameResponse = await fetch(`http://localhost:5005/games/gameinfo/${gameId}`);
   const gameData = await gameResponse.json();
@@ -47,7 +46,6 @@ console.error("Error fetching list details:", error);
     fetchWishlist();
   }, []);
 
-  // If list details or games details are still being fetched, display a loading message
   if (!wishlist || gamesDetails.length !== wishlist.games.length) {
     return <p>Loading...</p>;
   }

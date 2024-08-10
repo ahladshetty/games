@@ -6,7 +6,6 @@ export const addToWishlist = async (req, res) => {
       const{ userId } = req.user;
       const { gameId } = req.params;
 
-    // Find the user's wishlist or create a new one if it doesn't exist
     let wishlist = await Wishlist.findOne({ userId });
 
     if (!wishlist) {
@@ -78,7 +77,6 @@ import { findRecommendations } from './recomController.js';
 
 export const getRecommendationsFromWishlist = async (req, res) => {
   try {
-    // Retrieve the current user's wishlist
     const { userId } = req.user;
     const wishlist = await Wishlist.findOne({ userId });
 
@@ -86,13 +84,11 @@ export const getRecommendationsFromWishlist = async (req, res) => {
       return res.status(400).json({ message: 'Wishlist is empty' });
     }
 
-    // Extract game IDs from the wishlist
     const gameIds = wishlist.games;
 
     // Call findRecommendations function with wishlist game IDs as request body
     const recommendations = await findRecommendations({ body: { gameIds } }, res);
 
-    // Return the recommendations generated from the wishlist
     res.json(recommendations);
   } catch (error) {
     console.error(error);

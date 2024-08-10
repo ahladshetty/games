@@ -46,14 +46,14 @@ const Signup = () => {
       backgroundImage: `url(${img})`
       }}>
          <div className="absolute flex justify-center space-x-36 bottom-0">
-       <img src={a1} class="h-10 w-auto movele delay4"/>
-       <img src={a1} class=" h-10 w-auto movele delay1"/>
-       <img src={a1} class=" h-10 w-auto movele delay4"/>
-       <img src={a1} class="h-10 w-auto movele delay2"/>
-       <img src={a1} class="h-10 w-auto movele delay3"/>
-       <img src={a1} class="h-10 w-auto movele delay5"/>
-       <img src={a1} class="h-10 w-auto movele delay2"/>
-       <img src={a1} class="h-10 w-auto movele delay1"/>
+       <img src={a1} alt="" className="h-10 w-auto movele delay4"/>
+       <img src={a1} alt="" className=" h-10 w-auto movele delay1"/>
+       <img src={a1} alt="" className=" h-10 w-auto movele delay4"/>
+       <img src={a1} alt="" className="h-10 w-auto movele delay2"/>
+       <img src={a1} alt="" className="h-10 w-auto movele delay3"/>
+       <img src={a1} alt="" className="h-10 w-auto movele delay5"/>
+       <img src={a1} alt="" className="h-10 w-auto movele delay2"/>
+       <img src={a1} alt="" className="h-10 w-auto movele delay1"/>
       </div>
     {/* <Navbar /> */}
     <div className="flex justify-center font-body mb-4">

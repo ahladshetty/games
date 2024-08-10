@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import hbg from '../../src/images/homebg2.svg'
 
 const List = () => {
-  // State variable to store lists
   const [lists, setLists] = useState([]);
 
-  // Fetch lists from the backend when component mounts
   useEffect(() => {
     const fetchLists = async () => {
       try {
@@ -39,7 +37,6 @@ const List = () => {
             <h3 className='d-flex justify-content-between pb-0'>{list.title}</h3>
             <p>{list.description}</p>
             <p><h3><span className="badge bg-secondary p-2 mb-2">{list.games.length} games</span></h3></p>
-            {/* Add Link to navigate to ListDetails component */}
             <Link to={`/listinfo/${list._id}`} className="btn btn-success p-3 transform hover:scale-110 transition duration-150 ease-in-out">View Details</Link>
           </div>
         ))}

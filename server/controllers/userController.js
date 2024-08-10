@@ -2,7 +2,7 @@ import User from "../models/User.js"
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 
-const JWT_SECRET = 'supasecreto'
+const JWT_SECRET = process.env.SECRET
 
 // ROUTE 1: Create a User using: POST '/adduser'
 export const addUser = async (req, res, next) => {
@@ -21,7 +21,7 @@ export const addUser = async (req, res, next) => {
       password: secPass,
     };
 
-    const newUser=await User.create(userData); // insert into user collection
+    const newUser=await User.create(userData);
 
     const authtoken = jwt.sign({userId:newUser._id,userName:newUser.uname}, JWT_SECRET);
     res.json({ userData, authtoken });

@@ -18,7 +18,6 @@ const Listinfo = () => {
         const data = await response.json();
         setList(data);
         
-        // Fetch details for each game in the list
         const gameDetailsPromises = data.games.map(async gameId => {
           const gameResponse = await fetch(`http://localhost:5005/games/gameinfo/${gameId}`);
           const gameData = await gameResponse.json();
@@ -36,7 +35,6 @@ const Listinfo = () => {
     fetchListDetails();
   }, [id]);
 
-  // If list details or games details are still being fetched, display a loading message
   if (!list || gamesDetails.length !== list.games.length) {
     return <p>Loading...</p>;
   }
